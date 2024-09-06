@@ -21,8 +21,7 @@ export const MarvelApp = () => {
       <Pagination count={Math.round(total / 20)} className='d-flex justify-content-center' onChange={(e, value) => (setPagina(value))} />
       <div class="card  ">
         <div className="card-body">
-        <img src="https://i.pinimg.com/originals/fc/d8/b4/fcd8b448ba8a78936aaa02bd211d7d3b.jpg"height={100} width={100} className="d-flex justify-content-center" alt="" />
-        <p className="d-flex justify-content-center">Marvel</p>
+        <p className="d-flex justify-content-center">@MarvelCompany2024</p>
         </div>
       </div>
     </>
