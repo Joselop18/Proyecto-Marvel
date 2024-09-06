@@ -1,17 +1,22 @@
-import { useEffect, useState } from "react"
-import { reqCharacters } from "../service/characters"
+import { useEffect, useState } from 'react'
+import { reqCharacters} from '../service/characters'
 
-export const useCharacters = () => {
-
+export const useCharacters = (pagina,personaje) => {
     const [characters, setCharacters] = useState()
-
-    useEffect(() => {
-        reqCharacters().then((data) =>{
+    const [total, setTotal] = useState('')
+  
+    useEffect(()=> {
+        reqCharacters(pagina, personaje).then((data)=>{
             setCharacters(data.results)
-        })
-    }, [])
-
+            setTotal(data.total)
+    
+          })
+    },[pagina, personaje])
+  
+    
     return {
+        
         characters,
-    }
+        total,
+  }
 }
